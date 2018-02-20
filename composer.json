@@ -1,0 +1,19 @@
+{
+    "name": "inggo/inggo-noms-converter",
+    "authors": [
+        {
+            "name": "Inggo Espinosa",
+            "email": "inggo.espinosa@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Inggo\\Noms\\": "src/"
+        }
+    },
+    "require": {
+        "hyn/frontmatter": "^1.1",
+        "cocur/slugify": "^3.1",
+        "pixel418/markdownify": "^2.2"
+    }
+}
