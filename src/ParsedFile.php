@@ -200,7 +200,13 @@ class ParsedFile
 
         for ($i = $divs->length - 1; $i > -1; $i--) {
             $div = $divs->item($i);
-            if ($div->hasChildNodes()) {
+            if ($div->getAttribute('class') == 'fullpost') {
+                $fragment = $dom->createDocumentFragment();
+                while ($div->childNodes->length > 0) {
+                    $fragment->appendChild($div->childNodes->item(0));
+                }
+                $div->parentNode->replaceChild($fragment, $div);
+            } else if ($div->hasChildNodes()) {
                 $image = $div->firstChild->getAttribute('href');
                 $this->images[] = $image;
                 $div->parentNode->replaceChild($dom->createTextNode($image . "\n"), $div);
